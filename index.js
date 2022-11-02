@@ -143,7 +143,7 @@ d3.json(geoJsonUrl).then(geojson => {
     .enter()
     .append('path')
       .attr('d', pathGenerator) // This is where the magic happens
-      .attr('stroke', '#ccc') // Color of the lines themselves
+      .attr('stroke', '#ddd') // Color of the lines themselves
       .attr('fill', 'white') // Color uses to fill in the lines
       .attr('fill-opacity', 0)
 })
