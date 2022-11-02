@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>18th century books in Österreichische Nationalbibliothek</title>
+  <script src="https://d3js.org/d3.v6.min.js"></script>
+  <!-- script src="https://unpkg.com/d3-simple-slider"></script -->
+  <script src="d3-simple-slider.min.js"></script>
+  <script src="https://kit.fontawesome.com/2f4e00a49c.js" crossorigin="anonymous"></script>
+<style type="text/css">
+body {
+  font-family: sans-serif;
+}
+#value-time {
+  margin: 0;
+  padding: 0;
+  font-size: 0.8em;
+}
+#info-box {
+  font-family: sans-serif;
+  font-size: 0.6em;
+}
+td.city:hover {
+  cursor: pointer;
+}
+td.books {
+  text-align: right;
+}
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.column {
+  float: left;
+  width: 23%;
+  padding: 5px;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+}
+div.tooltip {
+  padding: 5px;
+  font-size: 0.6em;
+  border-radius: 5px;
+}
+p#variants {
+  color: #999;
+  font-size: 1.2em;
+}
+p#variants span {
+  color: maroon;
+}
+span.title {
+  color: #063970;
+}
+</style>
+</head>
+<body>
+  <button id="zoom-in">+</button>
+  <button id="zoom-out">-</button>
+  <span class="title">18th century books in Österreichische Nationalbibliothek</span>
+  <div id="map"></div>
+
+  <div class="row align-items-center">
+    <div class="col-sm-2"><p id="value-time"></p></div>
+    <div class="col-sm"><div id="slider-time"></div></div>
+    <div id="vis"><button id="play-button">Play</button></div>
+  </div>
+
+  <div id="info-box" class="row" style="width: 650px; position: absolute; top: 0; left: 850px;">
+    <div id="city-list" class="row"></div>
+    <div class="col-sm-2"><p id="variants"></p></div>
+  </div>
+
+  <script type="module" src="index.js"></script>
+</body>
+</html>
