@@ -298,8 +298,9 @@ const selectCity = id => {
     tooltipLineVertical.attr('x1', offsetX).attr('x2', offsetX);
     tooltipLineHorizontal.attr('y1', offsetY).attr('y2', offsetY);
 
-    const places = d.variants.split('|').map(d => '264a_ProvisionActivity_place_ss:"' + d + '"').join(' OR ');
-    const query = '008all07_GeneralInformation_date1_ss:"' + d.date + '" AND (' + places + ')';
+    const places = d.variants.split('|').map(d => '"' + d + '"').join(' OR ');
+    const query = '008all07_GeneralInformation_date1_ss:"' + d.date + '"'
+                + ' AND 264a_ProvisionActivity_place_ss:(' + places + ')';
     d3.select('#variants')
       .html('name variants: ' + d.variants.split('|').map(d => `<span>${d}</span>`).join(' &mdash; ') 
           + ' → ' + '<a href="http://ddb.qa-catalogue.eu/onb/?tab=data&query=' 
