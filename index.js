@@ -89,11 +89,12 @@ d3.select('p#value-time').text(sliderTime.value());
 
 let moving = false;
 let timer = null;
-let currentValue = d3.min(dataTime);
+let currentValue = sliderTime.value();
 let targetValue = d3.max(dataTime);
 
 playButton
   .on("click", function() {
+    currentValue = sliderTime.value();
     const button = d3.select(this);
     if (button.text() == 'Pause') {
       moving = false;
