@@ -289,7 +289,6 @@ const selectCity = id => {
     const d = city.data()[0];
     const offsetX = city.attr('cx') * currentScale + currentTranslate[0];
     const offsetY = city.attr('cy') * currentScale + currentTranslate[1];
- 
     const text = `${d.city}: ${d.n} publication` + (d.n == 1 ? '' : 's');
     tooltipSvg.attr('transform', `translate(${offsetX + 10}, ${offsetY - 10})`)
             .style('visibility', 'visible');
@@ -307,6 +306,7 @@ const selectCity = id => {
                   + encodeURIComponent(query) + '" target="_blank" title="[Search!]">'
                   + '<i class="fa fa-search" aria-hidden="true"></i></a>');
   } else {
+    tooltipSvg.select('#tooltip-text').text('');
     d3.select('#variants').html('');
   }
 
